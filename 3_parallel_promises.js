@@ -18,3 +18,4 @@ const promise4 = new Promise((resolve, reject) => {
 // *************** Promise.all() *************** //
 
 // *************** Promise.race() *************** //
+//Why use promise.race() resource: https://www.javascripttutorial.net/es6/javascript-promise-race/
