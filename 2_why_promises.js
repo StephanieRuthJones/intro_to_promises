@@ -1,4 +1,5 @@
-const userDistracted = true;
+
+const userDistracted = true
 const myTime = 1;
 function manageMyTime(callback, errorCallback) {
   if (myTime > 10) {
