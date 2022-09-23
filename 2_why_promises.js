@@ -1,9 +1,15 @@
-const userDistracted = true;
+//First, let's look at the code below.
+//We have the manageMyTime function that takes in a callback and errorCallback parameter.
+//The callback parameter is a function that will be called if the user has enough time.
+//The errorCallback parameter is a function that will be called if the user does not have enough time.
+//If a user does not have enough time or a user is distracted, the errorCallback will be called.
+//We call the manageMyTime function with a callback and errorCallback parameter, then log either the result or the error
+const isDistracted = true;
 const myTime = 1;
 function manageMyTime(callback, errorCallback) {
   if (myTime > 10) {
     callback("I have enough time!");
-  } else if (userDistracted) {
+  } else if (isDistracted) {
     errorCallback("I'm not paying attention!");
   } else {
     errorCallback("I don't have enough time!");
@@ -18,7 +24,7 @@ manageMyTime(
   }
 );
 
-//refactor using promises
+//Now, let's refactor using promises
 //1. remove callback and errorCallback parameters because the point of promises is that we no longer have need for callbacks
 //2. return a promise, input resolve and reject params
 //3. put the logic from the callback and errorCallback into the resolve and reject
@@ -30,7 +36,7 @@ function manageMyTimePromise() {
   return new Promise((resolve, reject) => {
     if (myTime > 10) {
       resolve("I have enough time!");
-    } else if (userDistracted) {
+    } else if (isDistracted) {
       reject("I'm not paying attention!");
     } else {
       reject("I don't have enough time!");
@@ -49,9 +55,5 @@ function manageMyTimePromise() {
 //Something you'll also find is that promises help us by doing automatic error handling.
 //They allow errors to be passed down the chain and handled in one common place without having to put in layers of manual error handling.
 manageMyTimePromise()
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
