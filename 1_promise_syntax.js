@@ -1,5 +1,5 @@
 //Syntax
-// Let’s see what a promise looks like. 
+// Let’s see what a promise looks like.
 
 // - First we declare a variable called `promiseToTeachYouPromises`.
 // - We assign the `promiseToTeachYouPromises` variable to the promise object which
@@ -38,7 +38,7 @@ promiseToTeachYouPromises
     console.error(error);
   });
 
-//   **Comprehension Questions:** 
+//   **Comprehension Questions:**
 
 // 1. What is a promise?
 // 2. What are the three states of a promise?
